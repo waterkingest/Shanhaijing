@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>妖怪分布</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+	<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
+	<link rel="stylesheet" href="./index.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+	<link rel="stylesheet" href="https://js.arcgis.com/4.15/esri/css/main.css">
+	<script src="https://js.arcgis.com/4.15/"></script>
+	<script>
+	require([
+        "esri/Map",
+        "esri/views/MapView",
+        "esri/Graphic",
+        "esri/widgets/ScaleBar",
+        "esri/widgets/Compass",
+        "esri/widgets/Locate",
+        "esri/widgets/AreaMeasurement2D",
+        "esri/widgets/DistanceMeasurement2D",
+        "esri/widgets/NavigationToggle",
+        "esri/widgets/Search",
+        "esri/layers/MapImageLayer",
+        "esri/renderers/HeatmapRenderer",
+        "esri/layers/FeatureLayer",
+        "esri/widgets/Feature",
+        "esri/views/2d/draw/Draw",
+        "esri/Graphic",
+        "esri/tasks/FindTask",
+        "esri/tasks/support/FindParameters",
+        "dojo/domReady!"
+    ], function (
+        Map,
+        MapView,
+        Graphic,
+        ScaleBar,
+        Locate,
+        Compass,
+        AreaMeasurement2D,
+        DistanceMeasurement2D,
+        NavigationToggle,
+        Search,
+        MapImageLayer,
+        HeatmapRenderer,
+        FeatureLayer,
+        Feature,
+        Draw,
+        Graphic,
+   
+        geometryEngine
+    ){
+
+		var map = new Map({
+		basemap: "topo-vector"
+		});
+
+		var view = new MapView({
+		    container: "viewDiv",
+		    map: map,
+		    center: [104.072329, 30.66342],
+		    zoom: 5
+        });
+        var layer1 = new MapImageLayer({
+            url: "http://47.113.87.213:6080/arcgis/rest/services/中国地图/MapServer",
+            opacity:0.5
+        })
+        var monster = new FeatureLayer({
+            url: "http://47.113.87.213:6080/arcgis/rest/services/monsterpoint/FeatureServer/0",
+
+            popupTemplate:{  //设置popup弹出框
+                title:"<strong>{name}</strong>",  //HTML元素在title和下面的content中都是可用的
+                content:[{    //以文本方式显示字段值，type可以是：text、fields、media、attachment
+                    type: "text",  //花括号中写上FeatureLayer的字段名字即可显示出当前要素的这个字段的值
+                    text: "妖怪名：{name}<br>" + "地址：{distributi}     {location}<br>" + "简介：{content}<br>" +
+                        "<hr>" +"经纬度：{lon}     {lat}<br>"
+                }]
+            }
+        });
+        map.add(layer1)
+        map.add(monster);
+        
+	});
+	</script>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+    <input type="checkbox" id="menu" />
+    <label for="menu" class="menu">
+	    <span></span>
+	    <span></span>
+	    <span></span>
+    </label>
+
+    <nav class="nav">
+	    <ul>
+		    <li><a href="index.html" class="menu-list-1">妖怪分布</a></li>
+		    <li><a href="yaoguaijieshao.html" class="menu-list-2">妖怪介绍</a></li>
+		    <li><a href="insert.html" class="menu-list-3">添加妖怪</a></li>
+		    <li><a href="update.html" class="menu-list-5">修改妖怪</a></li>
+	    </ul>
+    </nav>
+
+
+    <main>
+	    <mapmap>
+		     <!--加载地图-->
+            <div id="viewDiv"></div>
+            <div class="searchinput"></div>
+            <div class="searchbutton"></div>
+	    </mapmap>
+
+    </main>
+    <!-- partial -->
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+</body>
+</html>

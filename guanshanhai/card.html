@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>妖怪卡片 </title>
+  <script src="Scripts/jquery-1.11.1.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"><link rel="stylesheet" href="./card.css">
+
+</head>
+<body onload="myfunction()">
+<!-- partial:index.partial.html -->
+<section class="leadin">
+  <h1>Monster Card</h1>
+</section>
+
+<section class="flex-wrap">
+  <!-- Basic Media Card -->
+  <div class="media-card flex-item">
+  <div class="media-card__container">
+    <picture class="media-card__media">
+      
+      <!--<img src="https://steamcdn-a.akamaihd.net/steam/apps/854220/ss_36fa2d535fbc165fc9166fccf6c416a0d617ec2c.600x338.jpg?t=1533240919" alt="Dungeon Scene">-->
+    </picture>
+    <div class="media-card__editorial">
+      <h2 class="media-card__title" id="title">
+      </h2>
+      <p class="media-card__text" id="introduction"></p>
+    </div>
+    <div class="media-card__action">
+      <button class="btn">
+        LIKE
+      </button>
+       <button class="delet" id="delet">Delete</button>
+    </div>
+  </div>
+</div>
+</section>
+</body onload="myfunction()" >
+<script>
+    function GetQueryValue(queryName) {
+        var query = decodeURI(window.location.search.substring(1));
+        var vars = query.split("&");
+        for (var i = 0; i < vars.length; i++) {
+            var pair = vars[i].split("=");
+            if (pair[0] == queryName) { return pair[1]; }
+        }
+        return null;
+    }
+    function myfunction() {
+        var title = document.getElementsByClassName("media-card__title");
+        var bigImg = document.createElement("img");
+        var text = document.getElementsByClassName("media-card__text");
+        var imgadd = document.getElementsByClassName("media-card__media")[0];
+        var tab1_a = GetQueryValue("id");
+
+        $.ajax({
+            type: "Post",
+            url: "WebService1.asmx/SelectByID",
+            data: "{id:'" + tab1_a + "'}",
+            dataType: "json",
+            contentType: "application/json",
+            success: function (result) {
+                bigImg.src = result.d[0];
+                imgadd.appendChild(bigImg);
+                $('#title').text(result.d[1]);
+                $('#introduction').text(result.d[6]);
+            }, error: function (xhr) { alert(xhr.responseText) }
+
+        })
+    }
+    $("#delet").click(function () {
+        alert('没有权限')
+        //var id = GetQueryValue("id");
+        //$.ajax({
+        //    type: "Post",
+        //    url: "WebService1.asmx/deletebyid",
+        //    data: "{a:'" + id + "'}",
+        //    dataType: "json",
+        //    contentType: "application/json",
+        //    success: function (result) {
+        //        window.location.href = "yaoguaijieshao.html";
+        //        alert('妖怪已删除');
+        //    }, error: function (xhr) { alert(xhr.responseText) }
+
+        //})
+
+    })
+</script>
+</html>

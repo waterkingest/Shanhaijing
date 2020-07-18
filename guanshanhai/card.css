@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,700&display=swap");
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+.media-card {
+  background: #efefef;
+  box-shadow: 0 0 5px black;
+  max-width: 420px;
+  margin: 0 auto;
+  position: relative;
+}
+.media-card .media-card__media img {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+.media-card .media-card__editorial {
+  color: #333;
+  font-family: var(--font);
+  padding: 8px;
+  padding-bottom: 16px;
+  position: relative;
+}
+.media-card .media-card__editorial .media-card__title {
+  font-size: 20px;
+  line-height: 1.25;
+  margin: 0 0 16px 0;
+}
+.media-card .media-card__editorial .media-card__title .title__sub-title {
+  color: #555;
+  display: block;
+  font-weight: 400;
+}
+.media-card .media-card__editorial .media-card__text {
+  color: #3e3e3e;
+  margin: 0;
+}
+.media-card .media-card__editorial .media-card__helper-text {
+  background: #3D8822;
+  color: white;
+  display: block;
+  font-size: 11px;
+  letter-spacing: 1px;
+  padding: 4px 8px;
+  position: absolute;
+  text-transform: uppercase;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -100%);
+}
+.media-card .media-card__action {
+  background-color: #323232;
+  display: flex;
+}
+
+.btn {
+  background-color: black;
+  width: auto;
+  padding: 16px;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border: none;
+  cursor: pointer;
+  outline: 1px transparent dashed;
+  outline-offset: 1px;
+  text-transform: uppercase;
+  transition: background-color .2s linear;
+  border-right: 1px solid black;
+  position: relative;
+}
+.btn:hover {
+  background-color: black;
+}
+.btn:focus {
+  outline-color: black;
+}
+.btn .fa-shopping-cart {
+  opacity: 0;
+  transition: all .25s linear;
+  width: 0;
+}
+.btn:hover, .btn:focus {
+  background: #3D8822;
+}
+.btn:hover .fa-shopping-cart, .btn:focus .fa-shopping-cart {
+  opacity: 1;
+  width: 20px;
+}
+.delet {
+    background-color: black;
+    width: auto;
+    left:244px;
+    padding: 16px;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+    outline: 1px transparent dashed;
+    outline-offset: 1px;
+    text-transform: uppercase;
+    transition: background-color .2s linear;
+    border-right: 1px solid black;
+    position: relative;
+}
+
+    .delet:hover {
+        background-color: black;
+    }
+
+    .delet:focus {
+        outline-color: black;
+    }
+
+    .delet .fa-shopping-cart {
+        opacity: 0;
+        transition: all .25s linear;
+        width: 0;
+    }
+
+    .delet:hover, .delet:focus {
+        background: #cb1414;
+    }
+
+        .delet:hover .fa-shopping-cart, .delet:focus .fa-shopping-cart {
+            opacity: 1;
+            width: 20px;
+        }
+
+.screen-reader {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.platforms {
+  display: flex;
+  flex: 1 0 auto;
+  justify-content: right;
+  padding: 0;
+  list-style-type: none;
+}
+.platforms .platform_img {
+  display: flex;
+  padding-right: 8px;
+}
+/*
+Can ignore from here down...
+*/
+html,
+body {
+  background-color: #474747;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.leadin {
+  color: white;
+  margin-bottom: 16px;
+}
+.leadin h1 {
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin-bottom: 0;
+}
+.leadin h1::before {
+  content: '|';
+  color: #F780CE;
+}
+.leadin p {
+  font-size: 13px;
+  letter-spacing: 1px;
+  line-height: 1.75;
+  margin: 0;
+  padding: 0;
+}
+.leadin p .amp {
+  color: #F780CE;
+}
+
+.sample {
+  background: white;
+  box-shadow: 0 0 5px #3e3e3e;
+  padding: 16px;
+}

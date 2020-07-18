@@ -1,0 +1,559 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AD8CF9D5-E580-4E04-8D17-95B3BEAFBEE4}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>观山海</RootNamespace>
+    <AssemblyName>观山海</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Mono.Security">
+      <HintPath>E:\ESRI2019\houduan\text\packages\Mono.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql">
+      <HintPath>E:\ESRI2019\houduan\text\packages\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
+    <Content Include="bin\Mono.Security.dll" />
+    <Content Include="bin\Npgsql.dll" />
+    <Content Include="bin\roslyn\csc.exe" />
+    <Content Include="bin\roslyn\csi.exe" />
+    <Content Include="bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll" />
+    <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll" />
+    <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll" />
+    <Content Include="bin\roslyn\System.AppContext.dll" />
+    <Content Include="bin\roslyn\System.Collections.Immutable.dll" />
+    <Content Include="bin\roslyn\System.Console.dll" />
+    <Content Include="bin\roslyn\System.Diagnostics.FileVersionInfo.dll" />
+    <Content Include="bin\roslyn\System.Diagnostics.StackTrace.dll" />
+    <Content Include="bin\roslyn\System.IO.Compression.dll" />
+    <Content Include="bin\roslyn\System.IO.FileSystem.dll" />
+    <Content Include="bin\roslyn\System.IO.FileSystem.Primitives.dll" />
+    <Content Include="bin\roslyn\System.IO.Pipes.AccessControl.dll" />
+    <Content Include="bin\roslyn\System.IO.Pipes.dll" />
+    <Content Include="bin\roslyn\System.Reflection.Metadata.dll" />
+    <Content Include="bin\roslyn\System.Security.AccessControl.dll" />
+    <Content Include="bin\roslyn\System.Security.Claims.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.Algorithms.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.Encoding.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.Primitives.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.X509Certificates.dll" />
+    <Content Include="bin\roslyn\System.Security.Principal.Windows.dll" />
+    <Content Include="bin\roslyn\System.Text.Encoding.CodePages.dll" />
+    <Content Include="bin\roslyn\System.ValueTuple.dll" />
+    <Content Include="bin\roslyn\System.Xml.ReaderWriter.dll" />
+    <Content Include="bin\roslyn\System.Xml.XmlDocument.dll" />
+    <Content Include="bin\roslyn\System.Xml.XPath.dll" />
+    <Content Include="bin\roslyn\System.Xml.XPath.XDocument.dll" />
+    <Content Include="bin\roslyn\vbc.exe" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe" />
+    <Content Include="bin\观山海.dll" />
+    <Content Include="bin\观山海.pdb" />
+    <Content Include="card.css" />
+    <Content Include="card.html" />
+    <Content Include="image\111.jpg" />
+    <Content Include="image\12.jpg" />
+    <Content Include="image\logo.png" />
+    <Content Include="image\㔮.jpg" />
+    <Content Include="image\㚟.jpg" />
+    <Content Include="image\䍶䍶.jpg" />
+    <Content Include="image\䍺.jpg" />
+    <Content Include="image\䑏疏.jpg" />
+    <Content Include="image\䖪鼠.jpg" />
+    <Content Include="image\䖺䗤%28条䗤%29.jpg" />
+    <Content Include="image\䟣踢.jpg" />
+    <Content Include="image\䰷鱼.jpg" />
+    <Content Include="image\䱤父之鱼.jpg" />
+    <Content Include="image\䱻鱼.jpg" />
+    <Content Include="image\䲃鱼.jpg" />
+    <Content Include="image\䲦鸟.jpg" />
+    <Content Include="image\䳅鵌.jpg" />
+    <Content Include="image\䳋渠.jpg" />
+    <Content Include="image\䴅.jpg" />
+    <Content Include="image\䴦.jpg" />
+    <Content Include="image\一目民.jpg" />
+    <Content Include="image\一臂民.jpg" />
+    <Content Include="image\丈夫国.jpg" />
+    <Content Include="image\三足乌（金乌）.jpg" />
+    <Content Include="image\三足龟.jpg" />
+    <Content Include="image\三身国.jpg" />
+    <Content Include="image\三青鸟.jpg" />
+    <Content Include="image\三面人.jpg" />
+    <Content Include="image\三首国.jpg" />
+    <Content Include="image\三首神.jpg" />
+    <Content Include="image\不廷胡余.jpg" />
+    <Content Include="image\举父.jpg" />
+    <Content Include="image\九凤.jpg" />
+    <Content Include="image\九尾狐.jpg" />
+    <Content Include="image\于儿.jpg" />
+    <Content Include="image\交胫国.jpg" />
+    <Content Include="image\人身羊角神.jpg" />
+    <Content Include="image\人身龙首神.jpg" />
+    <Content Include="image\人面虎身神.jpg" />
+    <Content Include="image\人面载觡神.jpg" />
+    <Content Include="image\人面马身神.jpg" />
+    <Content Include="image\人面鸮.jpg" />
+    <Content Include="image\人鱼.jpg" />
+    <Content Include="image\从从.jpg" />
+    <Content Include="image\何罗鱼.jpg" />
+    <Content Include="image\兕.jpg" />
+    <Content Include="image\六首蛟.jpg" />
+    <Content Include="image\冉遗鱼.jpg" />
+    <Content Include="image\凤凰.jpg" />
+    <Content Include="image\凫徯.jpg" />
+    <Content Include="image\刑天.jpg" />
+    <Content Include="image\劳民国.jpg" />
+    <Content Include="image\化蛇.jpg" />
+    <Content Include="image\北山经山神.jpg" />
+    <Content Include="image\厌火国.jpg" />
+    <Content Include="image\双双.jpg" />
+    <Content Include="image\句芒.jpg" />
+    <Content Include="image\合窳.jpg" />
+    <Content Include="image\吉光.jpg" />
+    <Content Include="image\君子国.jpg" />
+    <Content Include="image\嘘.jpg" />
+    <Content Include="image\嚣[兽].jpg" />
+    <Content Include="image\嚣[鸟].jpg" />
+    <Content Include="image\因因乎.jpg" />
+    <Content Include="image\土蝼.jpg" />
+    <Content Include="image\夏耕之尸.jpg" />
+    <Content Include="image\夔[牛].jpg" />
+    <Content Include="image\夔牛.jpg" />
+    <Content Include="image\大人国.jpg" />
+    <Content Include="image\天吴.jpg" />
+    <Content Include="image\天愚.jpg" />
+    <Content Include="image\天犬.jpg" />
+    <Content Include="image\天狗.jpg" />
+    <Content Include="image\天马.jpg" />
+    <Content Include="image\太岁.jpg" />
+    <Content Include="image\夫诸.jpg" />
+    <Content Include="image\夸父.jpg" />
+    <Content Include="image\奇肱国（奇股国）.jpg" />
+    <Content Include="image\奢比尸.jpg" />
+    <Content Include="image\女丑之尸.jpg" />
+    <Content Include="image\女子国.jpg" />
+    <Content Include="image\女魃.jpg" />
+    <Content Include="image\妴胡.jpg" />
+    <Content Include="image\婴勺.jpg" />
+    <Content Include="image\孟极.jpg" />
+    <Content Include="image\孟槐.jpg" />
+    <Content Include="image\孰湖.jpg" />
+    <Content Include="image\寓.jpg" />
+    <Content Include="image\居暨.jpg" />
+    <Content Include="image\山膏.jpg" />
+    <Content Include="image\山魈%28山臊%29.jpg" />
+    <Content Include="image\山𤟤（山浑）.jpg" />
+    <Content Include="image\峳峳.jpg" />
+    <Content Include="image\巴蛇.jpg" />
+    <Content Include="image\帝江.jpg" />
+    <Content Include="image\常羲.jpg" />
+    <Content Include="image\并封.jpg" />
+    <Content Include="image\幽鴳.jpg" />
+    <Content Include="image\应龙.jpg" />
+    <Content Include="image\延维（委蛇）.jpg" />
+    <Content Include="image\开明兽.jpg" />
+    <Content Include="image\弇兹.jpg" />
+    <Content Include="image\强良.jpg" />
+    <Content Include="image\当康.jpg" />
+    <Content Include="image\当扈.jpg" />
+    <Content Include="image\彘.jpg" />
+    <Content Include="image\戎.jpg" />
+    <Content Include="image\戎宣王尸.jpg" />
+    <Content Include="image\拘缨国.jpg" />
+    <Content Include="image\据比之尸.jpg" />
+    <Content Include="image\数斯.jpg" />
+    <Content Include="image\文文.jpg" />
+    <Content Include="image\文鳐鱼（飞鱼）.jpg" />
+    <Content Include="image\旄牛.jpg" />
+    <Content Include="image\旄马.jpg" />
+    <Content Include="image\旋龟.jpg" />
+    <Content Include="image\无启国.jpg" />
+    <Content Include="image\无肠国.jpg" />
+    <Content Include="image\旱兽.jpg" />
+    <Content Include="image\有穷鬼.jpg" />
+    <Content Include="image\朏朏.jpg" />
+    <Content Include="image\朱厌.jpg" />
+    <Content Include="image\朱獳.jpg" />
+    <Content Include="image\朱鳖鱼.jpg" />
+    <Content Include="image\枭阳.jpg" />
+    <Content Include="image\柔利国.jpg" />
+    <Content Include="image\栎.jpg" />
+    <Content Include="image\梁渠.jpg" />
+    <Content Include="image\槐江山天神.jpg" />
+    <Content Include="image\橐蜚.jpg" />
+    <Content Include="image\欧丝国.jpg" />
+    <Content Include="image\比翼鸟.jpg" />
+    <Content Include="image\毕方.jpg" />
+    <Content Include="image\毛民国.jpg" />
+    <Content Include="image\氐人国.jpg" />
+    <Content Include="image\水马.jpg" />
+    <Content Include="image\河伯（冯夷）.jpg" />
+    <Content Include="image\泰逢.jpg" />
+    <Content Include="image\洞庭怪神.jpg" />
+    <Content Include="image\涉𧕛.jpg" />
+    <Content Include="image\深目国.jpg" />
+    <Content Include="image\溪边.jpg" />
+    <Content Include="image\灌灌.jpg" />
+    <Content Include="image\灵羊.jpg" />
+    <Content Include="image\烛阴.jpg" />
+    <Content Include="image\犀渠.jpg" />
+    <Content Include="image\犀牛.jpg" />
+    <Content Include="image\犂𩵀之尸.jpg" />
+    <Content Include="image\犬封国.jpg" />
+    <Content Include="image\犰狳.jpg" />
+    <Content Include="image\狂鸟.jpg" />
+    <Content Include="image\狌狌（人）.jpg" />
+    <Content Include="image\狌狌（兽）.jpg" />
+    <Content Include="image\狍鸮.jpg" />
+    <Content Include="image\狕.jpg" />
+    <Content Include="image\狙如.jpg" />
+    <Content Include="image\狡.jpg" />
+    <Content Include="image\狪狪.jpg" />
+    <Content Include="image\独𤞞.jpg" />
+    <Content Include="image\狰.jpg" />
+    <Content Include="image\狸力.jpg" />
+    <Content Include="image\猎猎.jpg" />
+    <Content Include="image\猛豹.jpg" />
+    <Content Include="image\猲狙.jpg" />
+    <Content Include="image\猼訑.jpg" />
+    <Content Include="image\猾褢.jpg" />
+    <Content Include="image\獂.jpg" />
+    <Content Include="image\獙獙.jpg" />
+    <Content Include="image\獜.jpg" />
+    <Content Include="image\玄股国.jpg" />
+    <Content Include="image\王子夜尸.jpg" />
+    <Content Include="image\环狗.jpg" />
+    <Content Include="image\琴虫.jpg" />
+    <Content Include="image\白鵺.jpg" />
+    <Content Include="image\相柳（相繇）.jpg" />
+    <Content Include="image\瞿如.jpg" />
+    <Content Include="image\石夷.jpg" />
+    <Content Include="image\磈氏.jpg" />
+    <Content Include="image\祖状之尸.jpg" />
+    <Content Include="image\祝融.jpg" />
+    <Content Include="image\神𩳁.jpg" />
+    <Content Include="image\禺䝞.jpg" />
+    <Content Include="image\禺强.jpg" />
+    <Content Include="image\穷奇[牛].jpg" />
+    <Content Include="image\穷奇[虎].jpg" />
+    <Content Include="image\窃脂.jpg" />
+    <Content Include="image\窫窳[牛].jpg" />
+    <Content Include="image\窫窳[蛇身人面].jpg" />
+    <Content Include="image\窫窳[龙].jpg" />
+    <Content Include="image\竦斯.jpg" />
+    <Content Include="image\类.jpg" />
+    <Content Include="image\精卫.jpg" />
+    <Content Include="image\精精.jpg" />
+    <Content Include="image\絜钩.jpg" />
+    <Content Include="image\罗罗[兽].jpg" />
+    <Content Include="image\罗罗[鸟].jpg" />
+    <Content Include="image\罴九.jpg" />
+    <Content Include="image\羊身人面神.jpg" />
+    <Content Include="image\羬羊.jpg" />
+    <Content Include="image\羭山神.jpg" />
+    <Content Include="image\羲和.jpg" />
+    <Content Include="image\羸民.jpg" />
+    <Content Include="image\羽民国.jpg" />
+    <Content Include="image\耕父.jpg" />
+    <Content Include="image\耳鼠.jpg" />
+    <Content Include="image\聂耳国.jpg" />
+    <Content Include="image\肥遗[蛇].jpg" />
+    <Content Include="image\肥遗[鸟].jpg" />
+    <Content Include="image\肥𧒭.jpg" />
+    <Content Include="image\胜遇.jpg" />
+    <Content Include="image\脩辟之鱼.jpg" />
+    <Content Include="image\腾黄（乘黄）.jpg" />
+    <Content Include="image\臷国.jpg" />
+    <Content Include="image\英招.jpg" />
+    <Content Include="image\茈鱼.jpg" />
+    <Content Include="image\葱聋.jpg" />
+    <Content Include="image\蓐收.jpg" />
+    <Content Include="image\薄鱼.jpg" />
+    <Content Include="image\虎蛟.jpg" />
+    <Content Include="image\蛊雕.jpg" />
+    <Content Include="image\蛊？%28菟虫※%29.jpg" />
+    <Content Include="image\蛩蛩駏驉.jpg" />
+    <Content Include="image\蛫.jpg" />
+    <Content Include="image\蛮蛮[兽].jpg" />
+    <Content Include="image\蛮蛮[鸟].jpg" />
+    <Content Include="image\蜚.jpg" />
+    <Content Include="image\蜪犬.jpg" />
+    <Content Include="image\蜮民.jpg" />
+    <Content Include="image\蝡蛇.jpg" />
+    <Content Include="image\蝮虫（蝮虺）.jpg" />
+    <Content Include="image\蠃鱼.jpg" />
+    <Content Include="image\蠪侄.jpg" />
+    <Content Include="image\蠪蛭.jpg" />
+    <Content Include="image\西王母.jpg" />
+    <Content Include="image\讙.jpg" />
+    <Content Include="image\计蒙.jpg" />
+    <Content Include="image\诸怀.jpg" />
+    <Content Include="image\诸犍.jpg" />
+    <Content Include="image\象蛇.jpg" />
+    <Content Include="image\豪彘.jpg" />
+    <Content Include="image\豪鱼.jpg" />
+    <Content Include="image\贯胸国.jpg" />
+    <Content Include="image\贰负.jpg" />
+    <Content Include="image\贰负臣危.jpg" />
+    <Content Include="image\赣巨人.jpg" />
+    <Content Include="image\赤鱬.jpg" />
+    <Content Include="image\足訾.jpg" />
+    <Content Include="image\跂踵国.jpg" />
+    <Content Include="image\跂踵（鸟）.jpg" />
+    <Content Include="image\軨軨.jpg" />
+    <Content Include="image\轩辕国.jpg" />
+    <Content Include="image\那父.jpg" />
+    <Content Include="image\酸与.jpg" />
+    <Content Include="image\钉灵国.jpg" />
+    <Content Include="image\钦䲹.jpg" />
+    <Content Include="image\钦原.jpg" />
+    <Content Include="image\长乘神.jpg" />
+    <Content Include="image\长右.jpg" />
+    <Content Include="image\长股国.jpg" />
+    <Content Include="image\长臂国.jpg" />
+    <Content Include="image\长蛇.jpg" />
+    <Content Include="image\闻𧲂.jpg" />
+    <Content Include="image\阘非.jpg" />
+    <Content Include="image\陆吾神.jpg" />
+    <Content Include="image\陵鱼.jpg" />
+    <Content Include="image\雍和.jpg" />
+    <Content Include="image\雨师妾.jpg" />
+    <Content Include="image\雷神.jpg" />
+    <Content Include="image\青耕.jpg" />
+    <Content Include="image\靖人.jpg" />
+    <Content Include="image\韩流.jpg" />
+    <Content Include="image\顒.jpg" />
+    <Content Include="image\领胡.jpg" />
+    <Content Include="image\飞兽之神.jpg" />
+    <Content Include="image\飞鱼[如豚].jpg" />
+    <Content Include="image\飞鼠.jpg" />
+    <Content Include="image\驩头（驩兜）.jpg" />
+    <Content Include="image\马腹.jpg" />
+    <Content Include="image\马身龙首神.jpg" />
+    <Content Include="image\驳.jpg" />
+    <Content Include="image\驺虞.jpg" />
+    <Content Include="image\骄虫.jpg" />
+    <Content Include="image\鬿雀.jpg" />
+    <Content Include="image\鮨鱼.jpg" />
+    <Content Include="image\鮯鮯之鱼.jpg" />
+    <Content Include="image\鯈鱼.jpg" />
+    <Content Include="image\鯥.jpg" />
+    <Content Include="image\鯩鱼.jpg" />
+    <Content Include="image\鰧鱼.jpg" />
+    <Content Include="image\鰼鰼鱼.jpg" />
+    <Content Include="image\鱃鱼.jpg" />
+    <Content Include="image\鱄鱼.jpg" />
+    <Content Include="image\鱼妇.jpg" />
+    <Content Include="image\鳋鱼.jpg" />
+    <Content Include="image\鳙鳙之鱼.jpg" />
+    <Content Include="image\鴒䳩.jpg" />
+    <Content Include="image\鴖.jpg" />
+    <Content Include="image\鴢.jpg" />
+    <Content Include="image\鴸.jpg" />
+    <Content Include="image\鵕鸟.jpg" />
+    <Content Include="image\鵸鵌.jpg" />
+    <Content Include="image\鵹鹕.jpg" />
+    <Content Include="image\鶌鶋.jpg" />
+    <Content Include="image\鸓.jpg" />
+    <Content Include="image\鸟氏.jpg" />
+    <Content Include="image\鸟身龙首神（鹊神）.jpg" />
+    <Content Include="image\鸟首龙身神.jpg" />
+    <Content Include="image\鸟鼠同穴.jpg" />
+    <Content Include="image\鸣蛇.jpg" />
+    <Content Include="image\鸩.jpg" />
+    <Content Include="image\鸪𪄶.jpg" />
+    <Content Include="image\鸱.jpg" />
+    <Content Include="image\鸾鸟.jpg" />
+    <Content Include="image\鹿蜀.jpg" />
+    <Content Include="image\黑人.jpg" />
+    <Content Include="image\鼓.jpg" />
+    <Content Include="image\龙身人面神.jpg" />
+    <Content Include="image\龙鲤（龙鱼）.jpg" />
+    <Content Include="image\𡹤狗.jpg" />
+    <Content Include="image\𤛎.jpg" />
+    <Content Include="image\𤜣狼.jpg" />
+    <Content Include="image\𤝻即.jpg" />
+    <Content Include="image\𤟑.jpg" />
+    <Content Include="image\𤢺.jpg" />
+    <Content Include="image\𤣎如.jpg" />
+    <Content Include="image\𥘯.jpg" />
+    <Content Include="image\𧕛围.jpg" />
+    <Content Include="image\𩣡马.jpg" />
+    <Content Include="image\𩧰.jpg" />
+    <Content Include="image\𩶯魮之魚.jpg" />
+    <Content Include="image\𪁺𩿧.jpg" />
+    <Content Include="image\𪂧.jpg" />
+    <Content Include="image\𪄀𪃑.jpg" />
+    <Content Include="image\𪇆鸟.jpg" />
+    <Content Include="index.css" />
+    <Content Include="index.html" />
+    <Content Include="insert.html" />
+    <Content Include="insert_info.css" />
+    <Content Include="js\echarts.all.js" />
+    <Content Include="js\echarts.min.js" />
+    <Content Include="login.css" />
+    <Content Include="login.html" />
+    <Content Include="longin.aspx" />
+    <Content Include="maptest.html" />
+    <Content Include="obj\Debug\观山海.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\观山海.dll" />
+    <Content Include="obj\Debug\观山海.pdb" />
+    <Content Include="script.js" />
+    <None Include="Scripts\jquery-1.11.1.intellisense.js" />
+    <Content Include="Scripts\jquery-1.11.1.js" />
+    <Content Include="Scripts\jquery-1.11.1.min.js" />
+    <Content Include="style.css" />
+    <Content Include="update.html" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="WebService1.asmx" />
+    <Content Include="yaoguaijieshao.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="longin.aspx.cs">
+      <DependentUpon>longin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebService1.asmx.cs">
+      <DependentUpon>WebService1.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\roslyn\csc.exe.config" />
+    <Content Include="bin\roslyn\csc.rsp" />
+    <Content Include="bin\roslyn\csi.exe.config" />
+    <Content Include="bin\roslyn\csi.rsp" />
+    <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
+    <Content Include="bin\roslyn\Microsoft.Managed.Core.targets" />
+    <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
+    <Content Include="bin\roslyn\vbc.exe.config" />
+    <Content Include="bin\roslyn\vbc.rsp" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
+    <Content Include="bin\观山海.dll.config" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\观山海.csproj.CopyComplete" />
+    <Content Include="obj\Debug\观山海.csproj.CoreCompileInputs.cache" />
+    <Content Include="obj\Debug\观山海.csprojAssemblyReference.cache" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-1.11.1.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51066</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:51066/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

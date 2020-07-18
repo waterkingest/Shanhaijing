@@ -1,0 +1,138 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加妖怪</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./insert_info.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+</head>
+<body>
+    <!-- partial:index.partial.html -->
+    <input type="checkbox" id="menu" />
+    <label for="menu" class="menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+    <nav class="nav">
+        <ul>
+            <li><a href="index.html" class="menu-list-1">妖怪分布</a></li>
+            <li><a href="yaoguaijieshao.html" class="menu-list-2">妖怪介绍</a></li>
+            <li><a href="insert.html" class="menu-list-3">添加妖怪</a></li>
+            <li><a href="update.html" class="menu-list-5">修改妖怪</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="contact_form">
+            <div class="formulario">
+                <h1>添加妖怪信息</h1>
+                <h3>请您如实填写妖怪的相关信息</h3>
+                <p>
+                    <a>我们会认真会审核您的填写信息</a><br>
+                    <a>审核通过后将发布妖怪的信息在网页上</a>
+                </p>
+
+                    <p>
+                        <label for="nome" class="colocar_nome">
+                            妖怪姓名
+                            <span class="obrigatorio">*</span>
+                        </label>
+                        <input name="introduzir_nome" id="monstername" required="obrigatorio" placeholder="熊猫">
+                    </p>
+
+                    <p>
+                        <label for="email" class="colocar_email">
+                            省
+                            <span class="obrigatorio">*</span>
+                        </label>
+                        <input name="province" id="province" required="obrigatorio" placeholder="成都，四川">
+                        <label for="email" class="colocar_email">
+                            市
+                            <span class="obrigatorio">*</span>
+                        </label>
+                        <input name="city" id="city" required="obrigatorio" placeholder="成都，四川">
+                    </p>
+
+                    <p>
+                        <label for="telefone" class="colocar_telefone">
+                            地理坐标（经度）
+                            <span class="obrigatorio">*</span>
+                        </label>
+                        <input name="longitude" id="longitude" placeholder="104.072329">
+
+                        <label for="telefone" class="colocar_telefone">
+                            地理坐标（纬度）
+                            <span class="obrigatorio">*</span>
+                        </label>
+                        <input name="latitude" id="latitude" placeholder="30.66342">
+                    </p>
+
+                    <p>
+                        <label for="mensagem" class="colocar_mensagem">
+                            具体描述
+                            <span class="obrigatorio">*</span>
+                        </label>
+                        <textarea name="introduzir_mensagem" class="texto_mensagem" id="mensagem" required="obrigatorio" placeholder="熊猫是国家一级保护动物，常年..."></textarea>
+                    </p>
+
+                    <button type="submit" name="enviar_formulario" id="submit"><p>确认提交</p></button>
+
+                    <p class="aviso">
+                        <span class="obrigatorio"> * </span>非常感谢您为中国神话故事贡献自己的力量。
+                    </p>
+
+            </div>
+        </div>
+    </main>
+    <!-- partial -->
+    
+    <script type="text/javascript">
+        $("#submit").click(function () {
+            var tab1_a = $("#monstername").val();
+            var tab1_b = $("#province").val();
+            var tab1_c = $("#city").val();
+            var tab1_d = $("#longitude").val();
+            var tab1_e = $("#latitude").val();
+            var tab1_f = $("#mensagem").val();
+            if (tab1_a == "" ) {
+                alert("妖怪名不能为空！");
+                return false;
+            }
+
+            $.ajax({
+                type: "POST",
+                url:"WebService1.asmx/monsterinsert",
+                data: "{a:'" + tab1_a + "',b:'" + tab1_b + "',c:'" + tab1_c + "',d:'" + parseFloat(tab1_d) + "',e:'" + parseFloat(tab1_e) + "',f:'" + tab1_f +"'}",
+                dataType: "json",
+                contentType: "application/json",
+                success: function (result) {
+                    if (result.d == 1) {
+                        alert('妖怪添加成功');
+                        window.location.href = "yaoguaijieshao.html";
+                        $("#monstername").val("");
+                        $("#province").val("");
+                        $("#city").val("");
+                        $("#longitude").val("");
+                        $("#latitude").val("");
+                        $("#mensagem").val("");
+                    }
+                    else {
+                        alert('妖怪已存在,添加失败');
+                        $("#monstername").val("");
+                       
+                    }
+                }, error: function (xhr) { alert(xhr.responseText) }
+
+            })
+        })
+
+    </script>
+
+</body >
+</html >
